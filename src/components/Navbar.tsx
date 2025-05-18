@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Home, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -41,16 +41,12 @@ const Navbar = () => {
         <nav className="hidden items-center md:flex">
           <ul className="flex space-x-8">
             <li>
-              <Button 
-                variant="ghost" 
-                className="flex items-center space-x-1 p-0 text-sm font-medium text-foreground hover:text-primary transition-colors"
-                asChild
+              <a
+                href="/"
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
               >
-                <Link to="/">
-                  <Home className="h-4 w-4" />
-                  <span>Home</span>
-                </Link>
-              </Button>
+                Home
+              </a>
             </li>
             <li>
               <a
@@ -101,16 +97,13 @@ const Navbar = () => {
           <nav className="container py-4">
             <ul className="space-y-4">
               <li>
-                <Button
-                  variant="ghost"
-                  className="flex w-full items-center justify-start space-x-2 p-2 text-foreground hover:text-primary transition-colors"
-                  asChild
+                <a
+                  href="/"
+                  className="block py-2 text-foreground hover:text-primary transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
                 >
-                  <Link to="/" onClick={() => setMobileMenuOpen(false)}>
-                    <Home className="h-4 w-4" />
-                    <span>Home</span>
-                  </Link>
-                </Button>
+                  Home
+                </a>
               </li>
               <li>
                 <a
