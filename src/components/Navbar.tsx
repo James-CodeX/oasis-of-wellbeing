@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,12 +30,12 @@ const Navbar = () => {
       }`}
     >
       <div className="container flex items-center justify-between">
-        <a href="#" className="flex items-center space-x-2">
+        <Link to="/" className="flex items-center space-x-2">
           <span className="h-8 w-8 rounded-full bg-gradient-to-br from-oasis-400 to-teal-500"></span>
           <span className="font-serif text-xl font-bold text-primary">
             Oasis of Wellbeing
           </span>
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center md:flex">
@@ -75,8 +76,9 @@ const Navbar = () => {
           <Button
             className="ml-8 bg-primary hover:bg-primary/90 text-primary-foreground"
             size="sm"
+            asChild
           >
-            Get Help
+            <Link to="/booking">Get Help</Link>
           </Button>
         </nav>
 
@@ -133,8 +135,11 @@ const Navbar = () => {
               <li>
                 <Button
                   className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                  asChild
                 >
-                  Get Help
+                  <Link to="/booking" onClick={() => setMobileMenuOpen(false)}>
+                    Get Help
+                  </Link>
                 </Button>
               </li>
             </ul>

@@ -2,6 +2,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { LeafIcon } from "./icons/LeafIcon";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -23,11 +24,11 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-wrap gap-4 animate-fade-in" style={{ animationDelay: '0.8s' }}>
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white">
-                Book a Session
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white" asChild>
+                <Link to="/booking">Book a Session</Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10">
-                Explore Programs
+              <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10" asChild>
+                <Link to="#programs">Explore Programs</Link>
               </Button>
             </div>
           </div>
