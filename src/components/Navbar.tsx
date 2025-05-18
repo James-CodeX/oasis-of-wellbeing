@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
+import { Home, Menu } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -41,6 +41,18 @@ const Navbar = () => {
         <nav className="hidden items-center md:flex">
           <ul className="flex space-x-8">
             <li>
+              <Button 
+                variant="ghost" 
+                className="flex items-center space-x-1 p-0 text-sm font-medium text-foreground hover:text-primary transition-colors"
+                asChild
+              >
+                <Link to="/">
+                  <Home className="h-4 w-4" />
+                  <span>Home</span>
+                </Link>
+              </Button>
+            </li>
+            <li>
               <a
                 href="#services"
                 className="text-sm font-medium text-foreground hover:text-primary transition-colors"
@@ -54,14 +66,6 @@ const Navbar = () => {
                 className="text-sm font-medium text-foreground hover:text-primary transition-colors"
               >
                 Programs
-              </a>
-            </li>
-            <li>
-              <a
-                href="#about"
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-              >
-                About
               </a>
             </li>
             <li>
@@ -97,6 +101,18 @@ const Navbar = () => {
           <nav className="container py-4">
             <ul className="space-y-4">
               <li>
+                <Button
+                  variant="ghost"
+                  className="flex w-full items-center justify-start space-x-2 p-2 text-foreground hover:text-primary transition-colors"
+                  asChild
+                >
+                  <Link to="/" onClick={() => setMobileMenuOpen(false)}>
+                    <Home className="h-4 w-4" />
+                    <span>Home</span>
+                  </Link>
+                </Button>
+              </li>
+              <li>
                 <a
                   href="#services"
                   className="block py-2 text-foreground hover:text-primary transition-colors"
@@ -112,15 +128,6 @@ const Navbar = () => {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Programs
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#about"
-                  className="block py-2 text-foreground hover:text-primary transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  About
                 </a>
               </li>
               <li>
